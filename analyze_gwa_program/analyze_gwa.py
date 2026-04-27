@@ -32,3 +32,7 @@ class GradeAnalyzer:
                         best_grade_weight = current_grade
                         top_student_name = student_name.strip()
             print(f"Top Student: {top_student_name} with a GWA of {best_grade_weight:.2f}")
+if __name__ == "__main__":
+    analyzer_instance = GradeAnalyzer()
+    analyzer_instance.generate_dummy_data()
+    analyzer_instance.find_top_student()
