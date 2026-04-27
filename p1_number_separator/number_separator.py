@@ -13,3 +13,8 @@ class NumberSeparator:
                 for i in range(20):
                     random_integer = random.randint(1, 100)
                     target_file_object.write(f"{random_integer}\n")
+    def process_numbers(self):
+        try:
+            pass
+        except FileNotFoundError:
+            print(f"Error: {self.input_file_name} not found.")
