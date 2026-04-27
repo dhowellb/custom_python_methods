@@ -7,3 +7,4 @@ class LifeLogger:
             pass
             while True:
                 user_input_line = input("Enter line: ")
+                output_file_object.write(user_input_line + "\n")
