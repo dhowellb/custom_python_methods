@@ -14,3 +14,6 @@ class GradeAnalyzer:
                 "Student_Q, 1.50", "Student_R, 2.50", "Student_S, 2.75", "Student_T, 1.55"
             ]
             print("Generating student records...")
+            with open(self.input_file_name, "w") as target_file_object:
+                for student_record in sample_student_records:
+                    target_file_object.write(f"{student_record}\n")
