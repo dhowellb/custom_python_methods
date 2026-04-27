@@ -28,3 +28,7 @@ class NumberSeparator:
                         
         except FileNotFoundError:
             print(f"Error: {self.input_file_name} not found.")
+if __name__ == "__main__":
+    separator_instance = NumberSeparator()
+    separator_instance.generate_dummy_data()
+    separator_instance.process_numbers()
