@@ -17,3 +17,10 @@ class GradeAnalyzer:
             with open(self.input_file_name, "w") as target_file_object:
                 for student_record in sample_student_records:
                     target_file_object.write(f"{student_record}\n")
+    def find_top_student(self):
+        top_student_name = ""
+        best_grade_weight = float('inf')
+        try:
+            pass
+        except FileNotFoundError:
+            print(f"Error: {self.input_file_name} not found.")
