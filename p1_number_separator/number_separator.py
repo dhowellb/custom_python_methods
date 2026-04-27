@@ -15,6 +15,16 @@ class NumberSeparator:
                     target_file_object.write(f"{random_integer}\n")
     def process_numbers(self):
         try:
-            pass
+            with open(self.input_file_name, "r") as input_file_object, \
+                 open(self.even_file_name, "w") as even_file_object, \
+                 open(self.odd_file_name, "w") as odd_file_object:
+                
+                for line in input_file_object:
+                    number = int(line.strip())
+                    if number % 2 == 0:
+                        even_file_object.write(f"{number}\n")
+                    else:
+                        odd_file_object.write(f"{number}\n")
+                        
         except FileNotFoundError:
             print(f"Error: {self.input_file_name} not found.")
