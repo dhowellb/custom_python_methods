@@ -19,3 +19,15 @@ class NumberTransformer:
             pass
         except FileNotFoundError:
             print(f"Error: {self.input_file_name} not found.")
+            with open(self.input_file_name, "r") as input_file_object, \
+                 open(self.double_file_name, "w") as double_file_object, \
+                 open(self.triple_file_name, "w") as triple_file_object:
+                for current_line in input_file_object:
+                    current_number = int(current_line.strip())
+                    if current_number % 2 == 0:
+                        squared_value = current_number ** 2
+                        double_file_object.write(f"{squared_value}\n")
+                    else:
+                        cubed_value = current_number ** 3
+                        triple_file_object.write(f"{cubed_value}\n")
+            print("Transformation complete.")
