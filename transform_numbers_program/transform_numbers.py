@@ -7,3 +7,6 @@ class NumberTransformer:
         self.input_file_name = input_file_name
         self.double_file_name = double_file_name
         self.triple_file_name = triple_file_name
+    def generate_dummy_data(self):
+        if not os.path.exists(self.input_file_name):
+            print("Generating integers file...")
