@@ -5,3 +5,5 @@ class LifeLogger:
     def write_entries(self):
         with open(self.output_file_name, "w") as output_file_object:
             pass
+            while True:
+                user_input_line = input("Enter line: ")
