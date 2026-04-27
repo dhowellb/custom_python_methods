@@ -8,3 +8,7 @@ class LifeLogger:
             while True:
                 user_input_line = input("Enter line: ")
                 output_file_object.write(user_input_line + "\n")
+                user_choice = input("Are there more lines y/n? ")
+                if user_choice.strip().lower() != 'y':
+                    break
+        print("Entries successfully saved.")
