@@ -6,3 +6,6 @@ class NumberSeparator:
         self.input_file_name = input_file_name
         self.even_file_name = even_file_name
         self.odd_file_name = odd_file_name
+    def generate_dummy_data(self):
+        if not os.path.exists(self.input_file_name):
+            print("Generating input file with random integers...")
