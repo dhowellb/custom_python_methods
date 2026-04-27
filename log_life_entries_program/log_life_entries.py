@@ -12,3 +12,6 @@ class LifeLogger:
                 if user_choice.strip().lower() != 'y':
                     break
         print("Entries successfully saved.")
+if __name__ == "__main__":
+    logger_instance = LifeLogger()
+    logger_instance.write_entries()
