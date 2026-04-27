@@ -31,3 +31,7 @@ class NumberTransformer:
                         cubed_value = current_number ** 3
                         triple_file_object.write(f"{cubed_value}\n")
             print("Transformation complete.")
+if __name__ == "__main__":
+    transformer_instance = NumberTransformer()
+    transformer_instance.generate_dummy_data()
+    transformer_instance.process_and_transform()
