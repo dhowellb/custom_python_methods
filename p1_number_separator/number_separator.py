@@ -22,7 +22,13 @@ class NumberSeparator:
                  open(self.even_file_name, "w") as even_file_object, \
                  open(self.odd_file_name, "w") as odd_file_object:
                 for current_line in input_file_object:
-                    current_number = int(current_line.strip())
+                    cleaned_line = current_line.strip()
+                    
+                    # Ito yung fix: Kung walang laman ang line (blanko), i-skip natin
+                    if not cleaned_line:
+                        continue
+                    
+                    current_number = int(cleaned_line)
                     if current_number % 2 == 0:
                         even_file_object.write(f"{current_number}\n")
                     else:
