@@ -1,0 +1,3 @@
+duke, 1.50
+jake, 1.25
+shaira, 1.00
