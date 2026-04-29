@@ -4,6 +4,7 @@ class GradeAnalyzer:
 
     def __init__(self, input_file_name="students.txt"):
         self.input_file_name = input_file_name
+
     def generate_dummy_data(self):
         if not os.path.exists(self.input_file_name):
             sample_student_records = [
@@ -17,13 +18,12 @@ class GradeAnalyzer:
             with open(self.input_file_name, "w") as target_file_object:
                 for student_record in sample_student_records:
                     target_file_object.write(f"{student_record}\n")
+
     def find_top_student(self):
         top_student_name = ""
         best_grade_weight = float('inf')
+
         try:
-            pass
-        except FileNotFoundError:
-            print(f"Error: {self.input_file_name} not found.")
             with open(self.input_file_name, "r") as input_file_object:
                 for current_line in input_file_object:
                     student_name, grade_string = current_line.strip().split(',')
@@ -31,8 +31,19 @@ class GradeAnalyzer:
                     if current_grade < best_grade_weight:
                         best_grade_weight = current_grade
                         top_student_name = student_name.strip()
-            print(f"Top Student: {top_student_name} with a GWA of {best_grade_weight:.2f}")
+                        
+            # Ilalabas lang natin yung print kung may nahanap talaga
+            if best_grade_weight != float('inf'):
+                print(f"Top Student: {top_student_name} with a GWA of {best_grade_weight:.2f}")
+                
+        # Ito lang dapat ang trabaho ng except block: mag-print ng error
+        except FileNotFoundError:
+            print(f"Error: {self.input_file_name} not found.")
+
+# Isang main block na lang ang kailangan natin
 if __name__ == "__main__":
+    print("Start na ang program...") 
     analyzer_instance = GradeAnalyzer()
-    analyzer_instance.generate_dummy_data()
+    # Naka-comment out ito para yung sarili mong students.txt ang basahin
+    # analyzer_instance.generate_dummy_data() 
     analyzer_instance.find_top_student()
